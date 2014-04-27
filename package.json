@@ -1,0 +1,44 @@
+{
+  "name": "Fast",
+  "version": "1.0.0",
+  "description": "A simple boilerplate to create projects with jade, stylus and gulp.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.6.2",
+    "gulp-concat": "~2.2.0",
+    "gulp-if": "~1.0.0",
+    "jeet2": "~5.3.0",
+    "gulp-jade": "~0.5.0",
+    "rupture": "~0.0.3",
+    "gulp-uglify": "~0.2.1",
+    "gulp-stylus": "~1.0.0",
+    "nib": "~1.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-jade": "^0.5.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-if": "^1.0.0",
+    "gulp-stylus": "^1.0.0",
+    "rupture": "0.0.3",
+    "nib": "^1.0.2",
+    "jeet2": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willianjusten/Fast.git"
+  },
+  "keywords": [
+    "Jade",
+    "Stylus",
+    "Gulp",
+    "Jeet"
+  ],
+  "author": "Willian Justen <willianjustenqui@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willianjusten/Fast/issues"
+  },
+  "homepage": "https://github.com/willianjusten/Fast"
+}

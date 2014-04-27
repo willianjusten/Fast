@@ -1,0 +1,45 @@
+/*  Syntax Quick Reference for Jeet
+	--------------------------
+	column(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet.gutter)
+	span(ratio = 1, offset = 0)
+	shift(ratios = 0, col_or_span = column, gutter = jeet.gutter)
+	unshift()
+	edit()
+	center(max_width = 1410px, pad = 0)
+	stack(pad = 0, align = false)
+	unstack()
+	align(direction = both)
+	cf()
+	reset-all()
+	reset-common()
+	reset-html5()
+	reset-links()
+	reset-typo()
+	reset-embed()
+	reset-group()
+	reset-forms()
+	reset-tables()
+
+*/
+
+@import "jeet"
+@import "nib"
+
+reset-all()
+edit()
+
+body
+	color: color
+
+section
+	center(960px)
+
+aside
+	col(1/3)
+
+article
+	col(2/3)
+	+below(700px)
+		background: linear-gradient(bottom left, white, red, blue, black);
+
+

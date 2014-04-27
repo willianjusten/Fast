@@ -1,0 +1,282 @@
+/*  Syntax Quick Reference for Jeet
+	--------------------------
+	column(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet.gutter)
+	span(ratio = 1, offset = 0)
+	shift(ratios = 0, col_or_span = column, gutter = jeet.gutter)
+	unshift()
+	edit()
+	center(max_width = 1410px, pad = 0)
+	stack(pad = 0, align = false)
+	unstack()
+	align(direction = both)
+	cf()
+	reset-all()
+	reset-common()
+	reset-html5()
+	reset-links()
+	reset-typo()
+	reset-embed()
+	reset-group()
+	reset-forms()
+	reset-tables()
+
+*/
+section,
+aside,
+article {
+  *zoom: 1;
+}
+section:before,
+aside:before,
+article:before,
+section:after,
+aside:after,
+article:after {
+  content: '';
+  display: table;
+}
+section:after,
+aside:after,
+article:after {
+  clear: both;
+}
+aside,
+article {
+  display: inline;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]),
+[hidden] {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+}
+font: inherit {
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+* {
+  background: #eee;
+  background: rgba(0,0,0,0.05);
+}
+body {
+  color: color;
+}
+section {
+  width: auto;
+  max-width: 960px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+aside {
+  float: left;
+  width: 31.3333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+aside:last-child {
+  margin-right: 0%;
+}
+article {
+  float: left;
+  width: 65.6666666666667%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+article:last-child {
+  margin-right: 0%;
+}
+@media only screen and (max-width: 700px) {
+  article {
+    background: -webkit-linear-gradient(bottom left, #fff, #f00, #00f, #000);
+    background: -moz-linear-gradient(bottom left, #fff, #f00, #00f, #000);
+    background: -o-linear-gradient(bottom left, #fff, #f00, #00f, #000);
+    background: -ms-linear-gradient(bottom left, #fff, #f00, #00f, #000);
+    background: linear-gradient(to top right, #fff, #f00, #00f, #000);
+  }
+}
