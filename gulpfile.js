@@ -8,7 +8,7 @@ var gulp       = require('gulp'),
 	uglify     = require('gulp-uglify'),
 	gulpif     = require('gulp-if'),
 	stylus     = require('gulp-stylus'),
-	jeet       = require('jeet2'),
+	wjgrid       = require('wj-grid'),
 	rupture    = require('rupture');
 
 var nib = require('nib');
@@ -32,7 +32,7 @@ gulp.task('js', function(){
 gulp.task('stylus', function(){
 		gulp.src('src/css/main.styl')
 		.pipe(stylus({
-			use:[nib(),jeet(),rupture()],
+			use:[nib(),wjgrid(),rupture()],
 			compress: env === 'production'
 		}))
 		.pipe(gulp.dest('build/css'));

@@ -7,7 +7,6 @@
     "gulp": "~3.6.2",
     "gulp-concat": "~2.2.0",
     "gulp-if": "~1.0.0",
-    "jeet2": "~5.3.0",
     "gulp-jade": "~0.5.0",
     "rupture": "~0.0.3",
     "gulp-uglify": "~0.2.1",
@@ -23,7 +22,7 @@
     "gulp-stylus": "^1.0.0",
     "rupture": "0.0.3",
     "nib": "^1.0.2",
-    "jeet2": "^5.3.0"
+    "wj-grid": "~1.0.0"
   },
   "repository": {
     "type": "git",
