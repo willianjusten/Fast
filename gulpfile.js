@@ -89,4 +89,4 @@ gulp.task('ftp', function () {
 gulp.task('default', ['js', 'jade', 'stylus', 'watch', 'connect']);
 
 // Build task
-gulp.task('build', ['js', 'jade', 'stylus', 'imagemin' ,'ftp']);
+gulp.task('build', ['js', 'jade', 'stylus', 'imagemin']);
