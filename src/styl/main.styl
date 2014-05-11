@@ -1,0 +1,99 @@
+/*  Syntax Quick Reference for Jeet
+	--------------------------
+	column(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet.gutter)
+	span(ratio = 1, offset = 0)
+	shift(ratios = 0, col_or_span = column, gutter = jeet.gutter)
+	unshift()
+	edit()
+	center(max_width = 1410px, pad = 0)
+	stack(pad = 0, align = false)
+	unstack()
+	align(direction = both)
+	cf()
+	reset-all()
+	reset-common()
+	reset-html5()
+	reset-links()
+	reset-typo()
+	reset-embed()
+	reset-group()
+	reset-forms()
+	reset-tables()
+
+*/
+
+@import "wjgrid"
+reset-all()
+
+@import "nib"
+@import "_variables"
+@import "_base"
+
+header
+	margin: 20px auto
+	img
+		float: left
+
+nav
+	margin-top: 40px
+	float: right
+	+below(cel)
+		margin-top: 0
+
+	ul
+		list-style: none
+		margin: 0
+	li
+		float: left
+		+below(cel)
+			float: none
+			padding-bottom: 10px
+	a
+		text-decoration: none
+		padding: 20px 25px
+		color: black
+		+below(tablet)
+			padding: 10px
+	.active
+		background: black
+		color: white
+		+below(cel)
+			background: none
+			color: black
+			text-decoration: underline
+
+.banner
+	+below(tablet)
+		display:none
+
+.icon
+	col(1/3)
+	text-align: center
+	margin-top: 20px
+	margin-bottom: 20px
+	img
+		border-radius 50%
+
+	+below(cel)
+		stack()
+		margin-top: 20px
+		margin-bottom: 20px
+
+article
+	margin: 30px auto
+
+.gallery
+	img
+		col(1/4, cycle: 4)
+		max-width: 100%
+		margin-bottom: 30px
+		+below(cel)
+			col(1/2, uncycle:4, cycle:2)
+			margin-bottom: 10px
+footer
+	margin-top: 40px
+	background: black
+	color: white
+	padding: 20px
+	text-align: center
+

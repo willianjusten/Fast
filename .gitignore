@@ -1,5 +1,4 @@
-# Created by http://www.gitignore.io
-
+### NODE ###
 node_modules
 
 ### OSX ###

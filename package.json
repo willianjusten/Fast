@@ -22,7 +22,12 @@
     "gulp-stylus": "^1.0.0",
     "rupture": "0.0.3",
     "nib": "^1.0.2",
-    "wj-grid": "~1.0.0"
+    "wj-grid": "^5.2.8",
+    "gulp-connect": "^2.0.5",
+    "connect-modrewrite": "^0.7.4",
+    "minimist": "0.0.9",
+    "gulp-ftp": "^0.2.1",
+    "gulp-imagemin": "^0.5.0"
   },
   "repository": {
     "type": "git",
