@@ -1,17 +1,15 @@
 #FAST BOILERPLATE
 
-A simple boilerplate to create project with Jade, Stylus and Gulp.
+A simple boilerplate to create projects with Jade, Stylus and Gulp.
 
-This boilerplate uses Jade and Stylus, maybe you want to read about them:
-
+Maybe you want to read about them:
+- [GulpJS](http://gulpjs.com/)
 - [Jade](http://jade-lang.com/)
 - [Stylus](http://learnboost.github.io/stylus/)
 
-And for Grid System, I'm using my Wj-grid, adapted from Jeet, You can learn how to use it in your [site](http://jeet.gs/), the changes were made just in the core.
+For Grid System uses Wj-Grid, a simple grid addapted from [Jeet](http://jeet.gs/). I did some modifications in core to avoid repetitions and added a modular normalize css, you can read their docs learn how to use, everything is equal.
 
 ## Getting Started
-
-It's simple and you'll need just 2 steps to get started.
 
 ### Installation
 
@@ -64,9 +62,9 @@ new_project -
 - `gulp watch`: call for watch files
 - `gulp -p`: minify all files for production
 
-### Demo
+### Demo Files
 
-To see the demo, you can access [here](https://github.com/willianjusten/Fast/tree/tests) or clone the project.
+To see a simple project made with this boilerplate, you can access [here](https://github.com/willianjusten/Fast/tree/tests) or clone the project.
 
 ```sh
 git clone git://github.com/willianjusten/Fast/tree/tests
