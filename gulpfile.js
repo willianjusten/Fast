@@ -75,7 +75,4 @@ gulp.task('connect', function() {
 });
 
 // Default task
-gulp.task('default', ['js', 'jade', 'stylus', 'watch', 'connect']);
-
-// Build task
-gulp.task('build', ['js', 'jade', 'stylus', 'imagemin']);
+gulp.task('default', ['js', 'jade', 'stylus', 'imagemin', 'watch', 'connect']);
