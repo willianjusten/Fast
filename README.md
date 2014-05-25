@@ -38,7 +38,7 @@ With the commands above, you have everything to start.
 new_project -
 	/build -
 		/css
-			main.css 
+			main.css
 		/img
 		/js
 			main.js
@@ -60,10 +60,17 @@ new_project -
 - `gulp jade`: compile jade files
 - `gulp stylus`: compile stylus files
 - `gulp imagemin`:compress image files
-- `gulp connect`: inicialize a server 
+- `gulp connect`: inicialize a server
 - `gulp watch`: call for watch files
-- `gulp -p`: minify all files for production 
+- `gulp -p`: minify all files for production
 
+### Demo
+
+To see the demo, you can access [here](https://github.com/willianjusten/Fast/tree/tests) or clone the project.
+
+```sh
+git clone git://github.com/willianjusten/Fast/tree/tests
+```
 
 
 
