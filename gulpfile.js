@@ -10,11 +10,9 @@ var env        = require('minimist')(process.argv.slice(2)),
 	gulpif     = require('gulp-if'),
 	stylus     = require('gulp-stylus'),
 	wjgrid     = require('wj-grid'),
-	nib        = require('nib'),
 	rupture    = require('rupture'),
 	connect    = require('gulp-connect'),
 	modRewrite = require('connect-modrewrite'),
-	ftp        = require('gulp-ftp'),
 	imagemin   = require('gulp-imagemin');
 
 // Call Jade for compile Templates
@@ -38,14 +36,14 @@ gulp.task('js', function(){
 gulp.task('stylus', function(){
 		gulp.src('src/styl/main.styl')
 		.pipe(stylus({
-			use:[nib(),wjgrid(),rupture()],
+			use:[wjgrid(),rupture()],
 			compress: env.p
 		}))
 		.pipe(gulp.dest('build/css'))
 		.pipe(connect.reload());
 });
 
-
+// Call Imagemin
 gulp.task('imagemin', function() {
   return gulp.src('src/img/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
@@ -57,6 +55,7 @@ gulp.task('watch', function(){
 	gulp.watch('src/templates/**/*.jade', ['jade']);
 	gulp.watch('src/styl/**/*.styl', ['stylus']);
 	gulp.watch('src/js/**/*.js', ['js']);
+	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
 });
 
 // Connect (Livereload)
@@ -73,16 +72,6 @@ gulp.task('connect', function() {
 			];
 		}
 	});
-});
-
-gulp.task('ftp', function () {
-    return gulp.src('build/**/*')
-        .pipe(ftp({
-            host: 'hostname',
-            remotePath: '/public_html/',
-            user: 'user',
-            pass: 'pass'
-        }));
 });
 
 // Default task
