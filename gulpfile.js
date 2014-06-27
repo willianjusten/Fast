@@ -5,7 +5,7 @@
 var env        = require('minimist')(process.argv.slice(2)),
 	gulp       = require('gulp'),
 	jade       = require('gulp-jade'),
-	concat     = require('gulp-concat'),
+	browserify = require('gulp-browserify'),
 	uglify     = require('gulp-uglify'),
 	gulpif     = require('gulp-if'),
 	stylus     = require('gulp-stylus'),
@@ -26,7 +26,7 @@ gulp.task('jade', function(){
 // Call Uglify and Concat JS
 gulp.task('js', function(){
 	return gulp.src('src/js/**/*.js')
-		.pipe(concat('main.js'))
+		.pipe(browserify({debug: !env.p }))
 		.pipe(gulpif(env.p, uglify()))
 		.pipe(gulp.dest('build/js'))
 		.pipe(connect.reload());
