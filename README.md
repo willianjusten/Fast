@@ -1,11 +1,12 @@
 #FAST BOILERPLATE
 
-A simple boilerplate to create projects with Jade, Stylus and Gulp.
+A simple boilerplate to create projects with Jade, Stylus, Gulp and Browserify.
 
 Maybe you want to read about them:
 - [GulpJS](http://gulpjs.com/)
 - [Jade](http://jade-lang.com/)
 - [Stylus](http://learnboost.github.io/stylus/)
+- [Browserify](http://browserify.org/)
 
 For Grid System uses Wj-Grid, a simple grid addapted from [Jeet](http://jeet.gs/). I did some modifications in core to avoid repetitions and added a modular normalize css, you can read their docs learn how to use, everything is equal.
 
@@ -54,7 +55,7 @@ new_project -
 ### Tasks
 
 - `gulp`: Initialize watch for changes and a server(localhost:8080)
-- `gulp js`: concatenate js files
+- `gulp js`: execute js files
 - `gulp jade`: compile jade files
 - `gulp stylus`: compile stylus files
 - `gulp imagemin`:compress image files
