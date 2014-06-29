@@ -25,7 +25,7 @@ gulp.task('jade', function(){
 
 // Call Uglify and Concat JS
 gulp.task('js', function(){
-	return gulp.src('src/js/**/*.js')
+	return gulp.src('src/js/main.js')
 		.pipe(browserify({debug: !env.p }))
 		.pipe(gulpif(env.p, uglify()))
 		.pipe(gulp.dest('build/js'))
