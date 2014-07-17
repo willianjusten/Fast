@@ -1,6 +1,6 @@
-var calc = require("../src/js/calc.js");
+var calc = require("../../src/js/calc.js");
 
-describe('A unit test', function(){
+describe('A unit test to test my calc', function(){
 	it("should return the sum", function(){
 		var sum = calc.addTwoNumbers(5,5);
 		expect(sum).toEqual(10);
@@ -15,4 +15,15 @@ describe('A unit test', function(){
 		var mult = calc.multTwoNumbers(5,5);
 		expect(mult).toEqual(25);
 	});
+
+	it("should return the division", function(){
+		var div = calc.divideTwoNumbers(10,2);
+		expect(div).toEqual(5);
+	});
+
+	it("should return that impossible", function(){
+		var div = calc.divideTwoNumbers(10,0);
+		expect(div).toEqual('You cant divide by 0');
+	});
+
 });

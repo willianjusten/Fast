@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A simple boilerplate to create projects with jade, stylus and gulp.",
   "main": "gulpfile.js",
+  "scripts": {
+  	"test": "karma start"
+  },
   "dependencies": {
     "gulp": "~3.6.2",
     "gulp-concat": "~2.2.0",
