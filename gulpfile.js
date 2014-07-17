@@ -13,7 +13,8 @@ var env        = require('minimist')(process.argv.slice(2)),
 	rupture    = require('rupture'),
 	connect    = require('gulp-connect'),
 	modRewrite = require('connect-modrewrite'),
-	imagemin   = require('gulp-imagemin');
+	imagemin   = require('gulp-imagemin'),
+	karma      = require('gulp-karma');
 
 // Call Jade for compile Templates
 gulp.task('jade', function(){
@@ -45,9 +46,9 @@ gulp.task('stylus', function(){
 
 // Call Imagemin
 gulp.task('imagemin', function() {
-  return gulp.src('src/img/**/*')
-    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('build/img'));
+	return gulp.src('src/img/**/*')
+		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+		.pipe(gulp.dest('build/img'));
 });
 
 // Call Watch

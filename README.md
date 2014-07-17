@@ -1,12 +1,13 @@
 #FAST BOILERPLATE
 
-A simple boilerplate to create projects with Jade, Stylus, Gulp and Browserify.
+A simple boilerplate to create projects with Jade, Stylus, Gulp, Browserify and Karma.
 
 Maybe you want to read about them:
 - [GulpJS](http://gulpjs.com/)
 - [Jade](http://jade-lang.com/)
 - [Stylus](http://learnboost.github.io/stylus/)
 - [Browserify](http://browserify.org/)
+- [Karma](http://karma-runner.github.io/)
 
 For Grid System uses Wj-Grid, a simple grid addapted from [Jeet](http://jeet.gs/). I did some modifications in core to avoid repetitions and added a modular normalize css, you can read their docs learn how to use, everything is equal.
 
@@ -50,6 +51,8 @@ new_project -
 		.editorconfig
 		gulpfile.js
 		package.json
+	/tests -
+		/unit
 ```
 
 ### Tasks
@@ -62,3 +65,4 @@ new_project -
 - `gulp connect`: inicialize a server
 - `gulp watch`: call for watch files
 - `gulp -p`: minify all files for production
+- `karma start`: launch a phantonjs and watch for tests
