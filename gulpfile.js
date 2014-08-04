@@ -94,3 +94,5 @@ gulp.task('deploy', function(){
 
 // Default task
 gulp.task('default', ['js', 'jade', 'stylus', 'imagemin', 'watch', 'connect']);
+// Build and Deploy
+gulp.task('build', ['js', 'jade', 'stylus', 'imagemin', 'deploy']);
