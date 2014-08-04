@@ -10,8 +10,9 @@ var env        = require('minimist')(process.argv.slice(2)),
 	uglify     = require('gulp-uglify'),
 	gulpif     = require('gulp-if'),
 	stylus     = require('gulp-stylus'),
-	wjgrid     = require('wj-grid'),
+	jeet       = require('jeet'),
 	rupture    = require('rupture'),
+	axis       = require('axis-css'),
 	connect    = require('gulp-connect'),
 	modRewrite = require('connect-modrewrite'),
 	imagemin   = require('gulp-imagemin'),
@@ -39,7 +40,7 @@ gulp.task('js', function(){
 gulp.task('stylus', function(){
 		gulp.src('src/styl/main.styl')
 		.pipe(stylus({
-			use:[wjgrid(),rupture()],
+			use:[axis(), jeet(),rupture()],
 			compress: env.p
 		}))
 		.pipe(gulp.dest('build/css'))
