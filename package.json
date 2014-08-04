@@ -4,7 +4,7 @@
   "description": "A simple boilerplate to create projects with jade, stylus and gulp.",
   "main": "gulpfile.js",
   "scripts": {
-  	"test": "karma start"
+    "test": "karma start"
   },
   "dependencies": {
     "gulp": "~3.6.2",
@@ -35,7 +35,9 @@
     "gulp-karma": "0.0.4",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma": "^0.12.17",
-    "karma-browserifast": "^0.6.1"
+    "karma-browserifast": "^0.6.1",
+    "gulp-util": "^3.0.0",
+    "rsyncwrapper": "^0.4.1"
   },
   "repository": {
     "type": "git",

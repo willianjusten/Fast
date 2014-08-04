@@ -4,6 +4,7 @@
 // Call Plugins
 var env        = require('minimist')(process.argv.slice(2)),
 	gulp       = require('gulp'),
+	gutil      = require('gulp-util'),
 	jade       = require('gulp-jade'),
 	browserify = require('gulp-browserify'),
 	uglify     = require('gulp-uglify'),
@@ -14,7 +15,8 @@ var env        = require('minimist')(process.argv.slice(2)),
 	connect    = require('gulp-connect'),
 	modRewrite = require('connect-modrewrite'),
 	imagemin   = require('gulp-imagemin'),
-	karma      = require('gulp-karma');
+	karma      = require('gulp-karma'),
+	rsync      = require('rsyncwrapper').rsync;
 
 // Call Jade for compile Templates
 gulp.task('jade', function(){
@@ -72,6 +74,22 @@ gulp.task('connect', function() {
 				])
 			];
 		}
+	});
+});
+
+// Rsync
+gulp.task('deploy', function(){
+	rsync({
+		ssh: true,
+		src: './build/',
+		dest: 'petropol@petropolisdecoracoes.com.br:/home/petropol/public_html/siteteste/',
+		port: 2808,
+		recursive: true,
+		syncDest: true,
+		args: ['--verbose']
+	},
+		function (erro, stdout, stderr, cmd) {
+			gutil.log(stdout);
 	});
 });
 
