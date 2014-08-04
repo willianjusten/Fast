@@ -65,4 +65,5 @@ new_project -
 - `gulp connect`: inicialize a server
 - `gulp watch`: call for watch files
 - `gulp -p`: minify all files for production
+- `gulp build -p`: minify files and deploy via rsync
 - `karma start`: launch a phantonjs and watch for tests
