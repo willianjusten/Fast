@@ -82,8 +82,7 @@ gulp.task('deploy', function(){
 	rsync({
 		ssh: true,
 		src: './build/',
-		dest: 'petropol@petropolisdecoracoes.com.br:/home/petropol/public_html/siteteste/',
-		port: 2808,
+		dest: 'user@hostname:/path/to/www',
 		recursive: true,
 		syncDest: true,
 		args: ['--verbose']
