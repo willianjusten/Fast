@@ -10,7 +10,7 @@ Maybe you want to read about them:
 - [Karma](http://karma-runner.github.io/)
 
 For grid system I use [Jeet](http://jeet.gs/) with some help from [Axis](http://roots.cx/axis/) to do animations and
-reset. And for responsive utilities, [Rupture](tps://github.com/jenius/rupture) is awesome =)
+reset. And for responsive utilities, [Rupture](htps://github.com/jenius/rupture) is awesome =)
 
 
 ## Getting Started
