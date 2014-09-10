@@ -29,7 +29,7 @@
     "gulp-connect": "^2.0.5",
     "connect-modrewrite": "^0.7.4",
     "minimist": "0.0.9",
-    "gulp-imagemin": "^0.5.0",
+    "gulp-imagemin": "1.0.1",
     "gulp-browserify": "^0.5.0",
     "karma-chrome-launcher": "^0.1.4",
     "karma-jasmine": "^0.1.5",
