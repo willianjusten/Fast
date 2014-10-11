@@ -12,7 +12,7 @@ var env        = require('minimist')(process.argv.slice(2)),
 	stylus     = require('gulp-stylus'),
 	jeet       = require('jeet'),
 	rupture    = require('rupture'),
-	axis       = require('axis-css'),
+	koutoSwiss = require('kouto-swiss'),
 	prefixer   = require('autoprefixer-stylus'),
 	connect    = require('gulp-connect'),
 	modRewrite = require('connect-modrewrite'),
@@ -41,7 +41,7 @@ gulp.task('js', function(){
 gulp.task('stylus', function(){
 		gulp.src('src/styl/main.styl')
 		.pipe(stylus({
-			use:[axis(), prefixer(), jeet(),rupture()],
+			use:[koutoSwiss(), prefixer(), jeet(),rupture()],
 			compress: env.p
 		}))
 		.pipe(gulp.dest('build/css'))
