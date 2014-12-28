@@ -5,6 +5,7 @@
 var env        = require('minimist')(process.argv.slice(2)),
 	gulp       = require('gulp'),
 	gutil      = require('gulp-util'),
+	plumber    = require('gulp-plumber'),
 	jade       = require('gulp-jade'),
 	browserify = require('gulp-browserify'),
 	uglify     = require('gulp-uglify'),
@@ -24,6 +25,7 @@ var env        = require('minimist')(process.argv.slice(2)),
 // Call Jade for compile Templates
 gulp.task('jade', function(){
 	return gulp.src('src/templates/*.jade')
+		.pipe(plumber())
 		.pipe(jade({pretty: !env.p }))
 		.pipe(gulp.dest('build/'))
 		.pipe(connect.reload());
@@ -32,6 +34,7 @@ gulp.task('jade', function(){
 // Call Uglify and Concat JS
 gulp.task('js', function(){
 	return gulp.src('src/js/**/*.js')
+		.pipe(plumber())
 		.pipe(concat('main.js'))
 		.pipe(gulpif(env.p, uglify()))
 		.pipe(gulp.dest('build/js'))
@@ -41,6 +44,7 @@ gulp.task('js', function(){
 // Call Uglify and Concat JS
 gulp.task('browserify', function(){
 	return gulp.src('src/js/main.js')
+		.pipe(plumber())
 		.pipe(browserify({debug: !env.p }))
 		.pipe(gulpif(env.p, uglify()))
 		.pipe(gulp.dest('build/js'))
@@ -50,6 +54,7 @@ gulp.task('browserify', function(){
 // Call Stylus
 gulp.task('stylus', function(){
 		gulp.src('src/styl/main.styl')
+		.pipe(plumber())
 		.pipe(stylus({
 			use:[koutoSwiss(), prefixer(), jeet(),rupture()],
 			compress: env.p
@@ -61,6 +66,7 @@ gulp.task('stylus', function(){
 // Call Imagemin
 gulp.task('imagemin', function() {
 	return gulp.src('src/img/**/*')
+		.pipe(plumber())
 		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
 		.pipe(gulp.dest('build/img'));
 });
