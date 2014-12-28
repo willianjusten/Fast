@@ -1,16 +1,26 @@
-doctype html
-html
-	head
-		title Title Site
-		meta(charset='UTF-8')
-		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		meta(name='description' content="meta desc")
-		meta(name='viewport' content='width=device-width, initial-scale=1.0')
-		link(rel="stylesheet", type="text/css", href="css/main.css")
+extends layouts/default
 
-	body
+append mainVars
+	- currentPage = 'index'
+	- pageTitle   = 'Home Page Site'
+	- metaDesc    = 'Meta description here'
 
-		//- put your content here
-		h1 It Works!
+block content
+	.content
+		.row
+			img.banner(src="img/banner.jpg", alt="Banner" width="940" height="320")
+		.row
+			article
+				h1 Kats
+				p Lorem ipsum Sunt in Duis in Duis amet enim minim ullamco dolore dolore velit in qui quis anim commodo dolore sunt quis esse quis in non exercitation laboris voluptate ut sunt aute nulla nisi cupidatat dolore eu pariatur deserunt pariatur dolore ullamco non quis officia culpa eiusmod irure adipisicing laborum reprehenderit reprehenderit fugiat non enim ad culpa enim elit amet deserunt fugiat sunt enim labore dolor Ut occaecat elit officia ea dolore cupidatat nostrud Duis ullamco ut voluptate ea Ut aliquip aute consequat proident ut laborum eu cupidatat Excepteur ut aute et dolore non quis esse officia ullamco exercitation quis esse aute sit tempor nisi Ut eu eiusmod voluptate Excepteur consectetur et ut enim commodo sit reprehenderit dolor commodo amet reprehenderit incididunt consequat minim sunt culpa qui non consequat sunt veniam consequat enim consectetur mollit et voluptate enim nostrud laboris ut voluptate anim esse exercitation proident anim dolor in incididunt veniam ullamco deserunt aute tempor reprehenderit consequat officia anim enim pariatur sunt ea mollit nostrud in Excepteur quis sit consectetur magna in consectetur dolor sint dolor velit sunt aliquip labore est qui Duis culpa fugiat occaecat non sunt sint eu ea et elit laborum dolore anim commodo non aute quis mollit nisi dolor voluptate qui dolor aliqua incididunt Ut irure in mollit mollit enim dolore elit veniam ex mollit ullamco culpa sint in labore nostrud id Ut ex officia ut deserunt dolor sit elit nulla qui.
+		.row
+			.icon
+				img(src="img/placeholder1.jpg", alt="Placeholder 1" width="200" height="200")
+				p Lorem ipsum Nostrud minim minim proident consectetur exercitation sit ut ad veniam consequat consectetur exercitation sit ut ad veniam consequat.
+			.icon
+				img(src="img/placeholder2.jpg", alt="Placeholder 1" width="200" height="200")
+				p Lorem ipsum Nostrud minim minim proident consectetur exercitation sit ut ad veniam consequat consectetur exercitation sit ut ad veniam consequat.
+			.icon
+				img(src="img/placeholder3.jpg", alt="Placeholder 1" width="200" height="200")
+				p Lorem ipsum Nostrud minim minim proident consectetur exercitation sit ut ad veniam consequat consectetur exercitation sit ut ad veniam consequat.
 
-		script(type="text/javascript", src="js/main.js")

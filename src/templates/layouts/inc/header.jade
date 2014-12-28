@@ -1,0 +1,14 @@
+header
+    .row
+        a(href="/")
+            img(src="img/logo.jpg", alt="Cats" width="200" height="100")
+
+        nav
+            ul
+                - each page, i in Navigation
+                    - if (currentPage === page.link)
+                        li
+                            a.active(href="#{page.link}") #{page.title}
+                    - else
+                        li
+                            a(href="#{page.link}") #{page.title}
