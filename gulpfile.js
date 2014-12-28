@@ -8,6 +8,7 @@ var env        = require('minimist')(process.argv.slice(2)),
 	jade       = require('gulp-jade'),
 	browserify = require('gulp-browserify'),
 	uglify     = require('gulp-uglify'),
+	concat     = require('gulp-concat'),
 	gulpif     = require('gulp-if'),
 	stylus     = require('gulp-stylus'),
 	jeet       = require('jeet'),
@@ -30,6 +31,15 @@ gulp.task('jade', function(){
 
 // Call Uglify and Concat JS
 gulp.task('js', function(){
+	return gulp.src('src/js/**/*.js')
+		.pipe(concat('main.js'))
+		.pipe(gulpif(env.p, uglify()))
+		.pipe(gulp.dest('build/js'))
+		.pipe(connect.reload());
+});
+
+// Call Uglify and Concat JS
+gulp.task('browserify', function(){
 	return gulp.src('src/js/main.js')
 		.pipe(browserify({debug: !env.p }))
 		.pipe(gulpif(env.p, uglify()))
@@ -60,6 +70,14 @@ gulp.task('watch', function(){
 	gulp.watch('src/templates/**/*.jade', ['jade']);
 	gulp.watch('src/styl/**/*.styl', ['stylus']);
 	gulp.watch('src/js/**/*.js', ['js']);
+	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
+});
+
+// Call Watch for Browserify
+gulp.task('watchfy', function(){
+	gulp.watch('src/templates/**/*.jade', ['jade']);
+	gulp.watch('src/styl/**/*.styl', ['stylus']);
+	gulp.watch('src/js/**/*.js', ['browserify']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
 });
 
@@ -96,5 +114,12 @@ gulp.task('deploy', function(){
 
 // Default task
 gulp.task('default', ['js', 'jade', 'stylus', 'imagemin', 'watch', 'connect']);
+
+// Default task using browserify
+gulp.task('fy', ['browserify', 'jade', 'stylus', 'imagemin', 'watchfy', 'connect']);
+
 // Build and Deploy
 gulp.task('build', ['js', 'jade', 'stylus', 'imagemin', 'deploy']);
+
+// Build and Deploy
+gulp.task('buildfy', ['browserify', 'jade', 'stylus', 'imagemin', 'deploy']);
