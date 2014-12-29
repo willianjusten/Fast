@@ -1,4 +1,4 @@
-#FAST BOILERPLATE
+#FAST BOILERPLATE EXAMPLE
 
 A simple boilerplate to create projects with Jade, Stylus, Gulp, Browserify and Karma.
 
@@ -26,6 +26,9 @@ First of all, install the dependencies to run this boilerplate.
 # Clone this repository
 $ git clone git://github.com/willianjusten/Fast.git new_project
 $ cd new_project
+
+# change the branch
+$ git checkout tests
 
 # install dependencies
 $ npm install
