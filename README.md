@@ -58,7 +58,8 @@ new_project -
 
 ### Examples
 
-If you want to see how this works, see this [branch](https://github.com/willianjusten/Fast/tree/tests)
+If you want to see how this works, see this [branch](https://github.com/willianjusten/Fast/tree/tests).
+
 Or clone the repository and change to the branch `tests`
 
 ```sh
