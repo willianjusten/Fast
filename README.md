@@ -56,6 +56,24 @@ new_project -
 		/unit
 ```
 
+### Examples
+
+If you want to see how this works, see this [branch](https://github.com/willianjusten/Fast/tree/tests)
+Or clone the repository and change to the branch `tests`
+
+```sh
+# Clone this repository
+$ git clone git://github.com/willianjusten/Fast.git new_project
+$ cd new_project
+
+# change the branch
+git checkout tests
+
+# install dependengcies
+$ npm install
+```
+
+
 ### Tasks
 
 - `gulp`: Initialize watch for changes and a server(localhost:8080)
