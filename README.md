@@ -68,7 +68,7 @@ $ git clone git://github.com/willianjusten/Fast.git new_project
 $ cd new_project
 
 # change the branch
-$ ggit checkout tests
+$ git checkout tests
 
 # install dependengcies
 $ npm install
