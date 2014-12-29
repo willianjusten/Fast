@@ -7,7 +7,7 @@ header
                 - each page, i in Navigation
                     - if (currentPage === page.link)
                         li
-                            a.active(href="#{page.link}") #{page.title}
+                            a.active(href="#{page.link}.html") #{page.title}
                     - else
                         li
-                            a(href="#{page.link}") #{page.title}
+                            a(href="#{page.link}.html") #{page.title}
