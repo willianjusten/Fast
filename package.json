@@ -35,7 +35,7 @@
     "karma-browserifast": "^0.6.1",
     "karma-chrome-launcher": "^0.1.12",
     "karma-cli": "0.0.4",
-    "karma-jasmine": "^0.1.5",
+    "karma-jasmine": "^0.1.6",
     "karma-phantomjs-launcher": "^0.1.4",
     "kouto-swiss": "^0.10.3",
     "minimist": "0.0.9",
