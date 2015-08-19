@@ -1,4 +1,6 @@
-#FAST BOILERPLATE
+![Fast](build/img/fast-logo.png)
+
+---
 
 A simple boilerplate to create projects with Jade, Stylus, Gulp, Browserify and Karma.
 

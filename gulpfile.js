@@ -27,7 +27,7 @@ gulp.task('jade', function(){
     return gulp.src('src/templates/*.jade')
         .pipe(plumber())
         .pipe(jade({pretty: !env.p }))
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/'));
 });
 
 // Call Uglify and Concat JS
@@ -36,7 +36,7 @@ gulp.task('js', function(){
         .pipe(plumber())
         .pipe(concat('main.js'))
         .pipe(gulpif(env.p, uglify()))
-        .pipe(gulp.dest('build/js'))
+        .pipe(gulp.dest('build/js'));
 });
 
 // Call Uglify and Concat JS
@@ -45,7 +45,7 @@ gulp.task('browserify', function(){
         .pipe(plumber())
         .pipe(browserify({debug: !env.p }))
         .pipe(gulpif(env.p, uglify()))
-        .pipe(gulp.dest('build/js'))
+        .pipe(gulp.dest('build/js'));
 });
 
 // Call Stylus
@@ -56,7 +56,7 @@ gulp.task('stylus', function(){
             use:[koutoSwiss(), prefixer(), jeet(),rupture()],
             compress: env.p
         }))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('build/css'));
 });
 
 // Call Imagemin
