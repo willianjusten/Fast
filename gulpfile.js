@@ -20,6 +20,7 @@ var env         = require('minimist')(process.argv.slice(2)),
     modRewrite  = require('connect-modrewrite'),
     imagemin    = require('gulp-imagemin'),
     karma       = require('gulp-karma'),
+    cache       = require('gulp-cache'),
     rsync       = require('rsyncwrapper').rsync;
 
 // Call Jade for compile Templates
@@ -63,7 +64,7 @@ gulp.task('stylus', function(){
 gulp.task('imagemin', function() {
     return gulp.src('src/img/**/*')
         .pipe(plumber())
-        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(gulp.dest('build/img'));
 });
 
