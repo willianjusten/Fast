@@ -91,7 +91,7 @@ $ npm install
 - `gulp -p`: minify all files for production
 - `gulp --fy -p`: minify all files for production (browserify mode)
 - `gulp build -p`: minify files and deploy via rsync
-- `gulp buildfy -p`: minify files and deploy via rsync (browserify mode)
+- `gulp build --fy -p`: minify files and deploy via rsync (browserify mode)
 - `karma start`: launch a phantonjs and watch for tests
 
 ### License
