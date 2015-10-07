@@ -111,7 +111,4 @@ gulp.task('deploy', function(){
 gulp.task('default', ['js', 'jade', 'stylus', 'imagemin', 'watch', 'browser-sync']);
 
 // Build and Deploy
-gulp.task('build', ['js', 'jade', 'stylus', 'imagemin', 'deploy']);
-
-// Build and Deploy
-gulp.task('buildfy', ['browserify', 'jade', 'stylus', 'imagemin', 'deploy']);
+gulp.task('build', [(env.fy) ? 'browserify' : 'js', 'jade', 'stylus', 'imagemin', 'deploy']);
