@@ -88,10 +88,10 @@ $ npm install
 - `gulp imagemin`:compress image files
 - `gulp connect`: inicialize a server
 - `gulp watch`: call for watch files
-- `gulp -p`: minify all files for production
-- `gulp --fy -p`: minify all files for production (browserify mode)
-- `gulp build -p`: minify files and deploy via rsync
-- `gulp build --fy -p`: minify files and deploy via rsync (browserify mode)
+- `gulp --p`: minify all files for production
+- `gulp --fy --p`: minify all files for production (browserify mode)
+- `gulp build --p`: minify files and deploy via rsync
+- `gulp build --fy --p`: minify files and deploy via rsync (browserify mode)
 - `karma start`: launch a phantonjs and watch for tests
 
 ### License

@@ -1,5 +1,5 @@
 // For development => gulp
-// For production  => gulp -p
+// For production  => gulp --p
 // For use browserify  => gulp --fy
 
 // Call Plugins
