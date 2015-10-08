@@ -1,5 +1,6 @@
 // For development => gulp
-// For production  => gulp -p
+// For production  => gulp --p
+// For use browserify  => gulp --fy
 
 // Call Plugins
 var env         = require('minimist')(process.argv.slice(2)),
@@ -72,15 +73,7 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function(){
     gulp.watch('src/templates/**/*.jade', ['jade']);
     gulp.watch('src/styl/**/*.styl', ['stylus']);
-    gulp.watch('src/js/**/*.js', ['js']);
-    gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
-});
-
-// Call Watch for Browserify
-gulp.task('watchfy', function(){
-    gulp.watch('src/templates/**/*.jade', ['jade']);
-    gulp.watch('src/styl/**/*.styl', ['stylus']);
-    gulp.watch('src/js/**/*.js', ['browserify']);
+    gulp.watch('src/js/**/*.js', [(env.fy) ? 'browserify' : 'js']);
     gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
 });
 
@@ -117,11 +110,5 @@ gulp.task('deploy', function(){
 // Default task
 gulp.task('default', ['js', 'jade', 'stylus', 'imagemin', 'watch', 'browser-sync']);
 
-// Default task using browserify
-gulp.task('fy', ['browserify', 'jade', 'stylus', 'imagemin', 'watchfy', 'browser-sync']);
-
 // Build and Deploy
-gulp.task('build', ['js', 'jade', 'stylus', 'imagemin', 'deploy']);
-
-// Build and Deploy
-gulp.task('buildfy', ['browserify', 'jade', 'stylus', 'imagemin', 'deploy']);
+gulp.task('build', [(env.fy) ? 'browserify' : 'js', 'jade', 'stylus', 'imagemin', 'deploy']);
