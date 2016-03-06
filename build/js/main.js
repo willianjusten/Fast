@@ -1,2 +1,1 @@
-// put your code here
-// remember, you can use modules with browserify
+!function(n,t){"use strict"}(window,document);
