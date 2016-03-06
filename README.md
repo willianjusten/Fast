@@ -86,13 +86,18 @@ $ npm install
 - `gulp jade`: compile jade files
 - `gulp stylus`: compile stylus files
 - `gulp imagemin`:compress image files
-- `gulp connect`: inicialize a server
+- `gulp browser-sync`: inicialize a server
 - `gulp watch`: call for watch files
+- `gulp deploy`: deploy files via rsync (view configuration below)
 - `gulp --p`: minify all files for production
 - `gulp --fy --p`: minify all files for production (browserify mode)
 - `gulp build --p`: minify files and deploy via rsync
 - `gulp build --fy --p`: minify files and deploy via rsync (browserify mode)
 - `karma start`: launch a phantomjs and watch for tests
+
+### Rsync Configuration
+
+In order to use rsync, you have to set up your ssh key in your host. After this, change [this line](https://github.com/willianjusten/Fast/blob/master/gulpfile.js#L100) in Gulpfile, using your username, hostname and destination folder.
 
 ### License
 
