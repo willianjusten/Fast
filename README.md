@@ -1,4 +1,4 @@
-![Fast](build/img/fast-logo.png)
+![Fast](src/img/fast-logo.png)
 
 ---
 
