@@ -25,15 +25,20 @@ var env         = require('minimist')(process.argv.slice(2)),
     rsync       = require('rsyncwrapper').rsync;
 
 // Call Jade for compile Templates
-gulp.task('jade', function(){
+gulp.task('jade', function () {
     return gulp.src('src/templates/*.jade')
         .pipe(plumber())
-        .pipe(jade({pretty: !env.p }))
+        .pipe(jade({pretty: !env.p}))
         .pipe(gulp.dest('build/'));
 });
 
+gulp.task('copy', function() {
+    return gulp.src(['src/*.html', 'src/*.txt'])
+        .pipe(gulp.dest('build/'))
+});
+
 // Call Uglify and Concat JS
-gulp.task('js', function(){
+gulp.task('js', function () {
     return gulp.src('src/js/**/*.js')
         .pipe(plumber())
         .pipe(concat('main.js'))
@@ -42,35 +47,35 @@ gulp.task('js', function(){
 });
 
 // Call Uglify and Concat JS
-gulp.task('browserify', function(){
+gulp.task('browserify', function () {
     return gulp.src('src/js/main.js')
         .pipe(plumber())
-        .pipe(browserify({debug: !env.p }))
+        .pipe(browserify({debug: !env.p}))
         .pipe(gulpif(env.p, uglify()))
         .pipe(gulp.dest('build/js'));
 });
 
 // Call Stylus
-gulp.task('stylus', function(){
-        gulp.src('src/styl/main.styl')
-        .pipe(plumber())
+gulp.task('stylus', function () {
+    gulp.src('src/styl/main.styl')
+    .pipe(plumber())
         .pipe(stylus({
-            use:[koutoSwiss(), prefixer(), jeet(),rupture()],
-            compress: env.p
+            use:[koutoSwiss(), prefixer(), jeet(), rupture()],
+            compress: env.p,
         }))
         .pipe(gulp.dest('build/css'));
 });
 
 // Call Imagemin
-gulp.task('imagemin', function() {
+gulp.task('imagemin', function () {
     return gulp.src('src/img/**/*')
         .pipe(plumber())
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+        .pipe(cache(imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
         .pipe(gulp.dest('build/img'));
 });
 
 // Call Watch
-gulp.task('watch', function(){
+gulp.task('watch', function () {
     gulp.watch('src/templates/**/*.jade', ['jade']);
     gulp.watch('src/styl/**/*.styl', ['stylus']);
     gulp.watch('src/js/**/*.js', [(env.fy) ? 'browserify' : 'js']);
@@ -78,37 +83,37 @@ gulp.task('watch', function(){
 });
 
 gulp.task('browser-sync', function () {
-   var files = [
-      'build/**/*.html',
-      'build/css/**/*.css',
-      'build/img/**/*',
-      'build/js/**/*.js'
-   ];
+    var files = [
+       'build/**/*.html',
+       'build/css/**/*.css',
+       'build/img/**/*',
+       'build/js/**/*.js',
+    ];
 
-   browserSync.init(files, {
-      server: {
-         baseDir: './build/'
-      }
-   });
+    browserSync.init(files, {
+        server: {
+            baseDir: './build/',
+        },
+    });
 });
 
 // Rsync
-gulp.task('deploy', function(){
+gulp.task('deploy', function () {
     rsync({
         ssh: true,
         src: './build/',
         dest: 'user@hostname:/path/to/www',
         recursive: true,
         syncDest: true,
-        args: ['--verbose']
+        args: ['--verbose'],
     },
         function (erro, stdout, stderr, cmd) {
             gutil.log(stdout);
-    });
+        });
 });
 
 // Default task
-gulp.task('default', ['js', 'jade', 'stylus', 'imagemin', 'watch', 'browser-sync']);
+gulp.task('default', [(env.fy) ? 'browserify' : 'js', 'jade', 'copy', 'stylus', 'imagemin', 'watch', 'browser-sync']);
 
 // Build and Deploy
-gulp.task('build', [(env.fy) ? 'browserify' : 'js', 'jade', 'stylus', 'imagemin', 'deploy']);
+gulp.task('build', [(env.fy) ? 'browserify' : 'js', 'jade', 'copy', 'stylus', 'imagemin', 'deploy']);
